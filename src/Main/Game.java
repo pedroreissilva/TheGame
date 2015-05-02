@@ -18,6 +18,8 @@ public class Game extends Canvas implements Runnable{
     private JFrame gameWindow;
     private static int WIDTH = 800;
     private static int HEIGHT = 600;
+    private int xOffcet = 0;
+    private int yOffcet = 0;
 
     /* We will create a image buffer to load the tiles, this buffer is the size of screen and the window,
     the final result will be an array with colors, or tiles;
@@ -124,7 +126,7 @@ public class Game extends Canvas implements Runnable{
 
         screen.clear();
 
-        screen.render();
+        screen.render(xOffcet, yOffcet);
 
         for(int i = 0; i < (getWidth() * getHeight()); i++){
             this.pixels[i] = screen.getPixels()[i];
